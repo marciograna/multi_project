@@ -1,0 +1,6 @@
+node_modules/
+dist/
+public/pdfjs/
+public/ocr/
+.DS_Store
+*.log
