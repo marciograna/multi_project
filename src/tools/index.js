@@ -24,7 +24,7 @@ const normalize = (s) =>
   s
     .toLowerCase()
     .normalize('NFD')
-    .replace(/[̀-ͯ]/g, '');
+    .replace(/[\u0300-\u036f]/g, '');
 
 /** Busca tolerante: "pdf para word", "heic", "mp3"… */
 export function searchTools(query) {

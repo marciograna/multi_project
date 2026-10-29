@@ -88,7 +88,7 @@ export default [
           case 'csv':
             return wb.SheetNames.map((name) => {
               // BOM UTF-8 para o Excel abrir acentos corretamente.
-              const csv = '﻿' + XLSX.utils.sheet_to_csv(wb.Sheets[name], { FS: sep, blankrows: false });
+              const csv = '\uFEFF' + XLSX.utils.sheet_to_csv(wb.Sheets[name], { FS: sep, blankrows: false });
               return output(rename(file.name, 'csv', multi ? `-${safe(name)}` : ''), new Blob([csv], { type: 'text/csv;charset=utf-8' }), 'csv');
             });
           case 'json': {

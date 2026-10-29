@@ -89,7 +89,7 @@ export async function readText(file) {
   } catch {
     text = new TextDecoder('windows-1252').decode(bytes);
   }
-  return text.replace(/^﻿/, '');
+  return text.replace(/^\uFEFF/, '');
 }
 
 /** Garante nomes únicos dentro de um ZIP ou lista. */
