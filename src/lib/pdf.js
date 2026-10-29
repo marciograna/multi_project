@@ -267,7 +267,7 @@ export async function extractImages(page, opList) {
       if (width < 24 || height < 24) continue;
       if (width * height > vp.width * vp.height * 0.8) continue;
       const ys = [ctm[5], ctm[5] + ctm[1], ctm[5] + ctm[3], ctm[5] + ctm[1] + ctm[3]];
-      found.push({ top: Math.max(...ys), width, height, ref: fn === OPS.paintImageXObject ? args[0] : args[0] });
+      found.push({ top: Math.max(...ys), width, height, ref: args[0] });
     }
   }
   const images = [];
